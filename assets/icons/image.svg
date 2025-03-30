@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <!-- 背景天空 -->
+  <rect x="0" y="0" width="400" height="200" fill="#87CEEB"/>
+
+  <!-- 定义草地图案 -->
+  <defs>
+    <pattern id="grassPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 20 L10 0 L20 20 Z" fill="#32CD32"/>
+      <path d="M5 15 L15 5 L20 15 Z" fill="#228B22"/>
+    </pattern>
+  </defs>
+
+  <!-- 使用图案填充草原 -->
+  <rect x="0" y="200" width="400" height="100" fill="url(#grassPattern)"/>
+
+  <!-- 云朵 -->
+  <g stroke="white" stroke-width="2" fill="none">
+    <circle cx="50" cy="60" r="20"/>
+    <circle cx="70" cy="55" r="25"/>
+    <circle cx="90" cy="60" r="20"/>
+  </g>
+
+  <!-- 小花 -->
+  <circle cx="350" cy="250" r="8" fill="#FF69B4"/>
+  <circle cx="365" cy="240" r="8" fill="#FF69B4"/>
+  <circle cx="350" cy="230" r="8" fill="#FF69B4"/>
+  <circle cx="335" cy="240" r="8" fill="#FF69B4"/>
+  <circle cx="350" cy="245" r="5" fill="#FFD700"/>
+</svg>

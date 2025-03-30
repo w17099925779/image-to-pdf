@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片转PDF工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="branding">
+                <img src="assets/icons/image.svg" class="brand-icon" alt="图片">
+                <img src="assets/icons/arrow.svg" class="arrow-icon" alt="箭头">
+                <img src="assets/icons/pdf.svg" class="brand-icon" alt="PDF">
+                <h1>图片转PDF</h1>
+            </div>
+            <p class="subtitle">支持 JPG/PNG/WebP 转高质量PDF</p>
+        </header>
+
+        <main class="main-content">
+            <div class="file-uploader">
+                <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                <label for="fileInput" class="upload-card">
+                    <div class="upload-content">
+                        <img src="assets/icons/upload.svg" class="upload-icon" alt="上传">
+                        <div class="upload-text">
+                            <h3>拖放文件到此区域</h3>
+                            <p>或点击选择图片文件</p>
+                        </div>
+                    </div>
+                </label>
+                
+                <div class="preview-panel" id="previewPanel">
+                    <div class="preview-header">
+                        <span>已选文件 (<span id="fileCount">0</span>)</span>
+                        <button type="button" class="btn-clear" id="clearBtn">清空列表</button>
+                    </div>
+                    <div class="preview-grid" id="previewGrid"></div>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <div class="settings-group">
+                    <div class="setting-item">
+                        <label>页面尺寸：</label>
+                        <select class="form-select" id="pageSize">
+                            <option value="A4">A4 (210×297mm)</option>
+                            <option value="Letter">Letter (216×279mm)</option>
+                            <option value="Auto">自动适应</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label>页面方向：</label>
+                        <select class="form-select" id="pageOrientation">
+                            <option value="portrait">纵向</option>
+                            <option value="landscape">横向</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn-primary" id="convertBtn">
+                    <span class="btn-content">
+                        <img src="assets/icons/pdf.svg" class="btn-icon">
+                        立即转换
+                    </span>
+                </button>
+            </div>
+        </main>
+
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">正在生成PDF...</div>
+        </div>
+    </div>
+
+    <script src="lib/jspdf.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
